@@ -5,24 +5,79 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Latihan Ilmu Socket.IO</title>
-  <link rel="stylesheet" href="./dist/output.css">
+  <link rel="stylesheet" href="./dist/output.css">  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;1,600&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;1,100;1,300;1,400&display=swap" rel="stylesheet">
   <style>
     * {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Poppins', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
   </style>
 </head>
 <body> 
 
-  <div class="container mx-auto">
-    <h1 class="text-3xl font-bold underline">
-      Hello world!
-    </h1>
-  </div>
-  <h1>Ini mau nyoba socket</h1>
+  <section class="top-title relative -z-10 bg-gray-100">
+    <div class="container mx-auto py-6 pb-10">
+      <h1 class="text-3xl text-center font-bold my-6">
+        SIMPLE POLLING
+      </h1>
 
-  <p>Ini adalah value yang lagi kita tes: <span><strong id="number">1</strong></span></p>
-  <button id="test-emit">Click Me!</button>
+      <p class="text-center mb-6">
+        You can choose one in the option below, and you can show the result of that in “stats.html”
+      </p>
+    </div>
+  </section>
+
+  <section class="options-polling -translate-y-7">
+    <div class="container mx-auto grid lg:grid-cols-4 gap-8 md:grid-cols-2 sm:grid-cols-1">
+      <div class="option transition ease-in-out duration-300 min-h-[180px] bg-white p-5 rounded-md shadow-[4px_4px_10px_2px_rgba(0,0,0,.06)] cursor-pointer relative md:mt-5 sm:mt-5" data-value="Playstation 4">
+        <div class="box h-full flex justify-center items-center">
+          <img src="./assets/images/PS4 Image.png" alt="PS 4 Image">
+        </div>
+
+        <h4 class="absolute -left-0 transition ease duration-500 -bottom-10 translate-y-6 select-none w-full text-center font-semibold opacity-0" data-text-value="Playstation 4">
+          Playstation 4
+        </h4>
+      </div>
+      <div class="option transition ease-in-out duration-300 min-h-[180px] bg-white p-5 rounded-md shadow-[4px_4px_10px_2px_rgba(0,0,0,.06)] cursor-pointer relative md:mt-5 sm:mt-5" data-value="Playstation 5">
+        <div class="box h-full flex justify-center items-center">
+          <img src="./assets/images/PS5 Image.png" alt="PS 5 Image">
+        </div>
+
+        <h4 class="absolute -left-0 transition ease duration-500 -bottom-10 translate-y-6 select-none w-full text-center font-semibold opacity-0" data-text-value="Playstation 5">
+          Playstation 5
+        </h4>
+      </div>
+      <div class="option transition ease-in-out duration-300 min-h-[180px] bg-white p-5 rounded-md shadow-[4px_4px_10px_2px_rgba(0,0,0,.06)] cursor-pointer relative md:mt-7 sm:mt-7" data-value="Nintendo Switch">
+        <div class="box h-full flex justify-center items-center">
+          <img src="./assets/images/Switch.png" alt="Nintendo Switch">
+        </div>
+
+        <h4 class="absolute -left-0 transition ease duration-500 -bottom-10 translate-y-6 select-none w-full text-center font-semibold opacity-0" data-text-value="Nintendo Switch">
+          Nintendo Switch
+        </h4>
+      </div>
+      <div class="option transition ease-in-out duration-300 min-h-[180px] bg-white p-5 rounded-md shadow-[4px_4px_10px_2px_rgba(0,0,0,.06)] cursor-pointer relative md:mt-7 sm:mt-7" data-value="Xbox Series X">
+        <div class="box h-full flex justify-center items-center">
+          <img src="./assets/images/Xbox Series X.png" alt="Xbox Series X">
+        </div>
+
+        <h4 class="absolute -left-0 transition ease duration-500 -bottom-10 translate-y-6 select-none w-full text-center font-semibold opacity-0" data-text-value="Xbox Series X">
+          Xbox Series X
+        </h4>
+      </div>
+    </div>  
+  </section>
+
+  <section class="py-12">
+    <div class="container text-center mt-3">  
+      <button class="py-3 px-8 transition duration-500 ease rounded-md bg-black text-white uppercase disabled:opacity-60" disabled type="submit">Submit</button>
+    </div>
+  </section>
+
+  <!-- <p>Ini adalah value yang lagi kita tes: <span><strong id="number">1</strong></span></p>
+  <button id="test-emit">Click Me!</button> -->
 
   <script src="./main.js" type="module"></script>
   <script src="./home.js" type="module"></script>

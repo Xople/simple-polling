@@ -4,9 +4,11 @@ const myChart = echarts.init(document.querySelector('#chart'));
 const data = getData()
 const socket = window.socket
 
-socket.on("add-number", () => {
+socket.on("set-stats", (args) => {  
+  const { option } = args
+
   const newData = window.getData().map((item) => {
-    return item.type == "Nintendo Switch" ? { ...item, value: item.value + 1 } : { ...item }
+    return item.type == option ? { ...item, value: item.value + 1 } : { ...item }
   })
   
   window.setData("ninit", newData)

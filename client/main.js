@@ -17,10 +17,9 @@ window.setData = (type="init", newData=null) => {
   if(!data && !newData && type == "init"){
     localStorage.setItem("data-stats", JSON.stringify([
       {type: "Nintendo Switch", value: 0},
-      {type: "Playstation 3", value: 0},
       {type: "Playstation 4", value: 0},
       {type: "Playstation 5", value: 0},
-      {type: "PC", value: 0},
+      {type: "Xbox Series X", value: 0},
     ]))
   } else {
     localStorage.setItem("data-stats", JSON.stringify(newData))
