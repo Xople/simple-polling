@@ -3,6 +3,7 @@ import * as echarts from 'echarts';
 const myChart = echarts.init(document.querySelector('#chart'));
 const data = getData()
 const socket = window.socket
+const bgBarColor = ["#edb721", "#9ce329", "#2569cf", "#9b2bbd"]
 
 socket.on("set-stats", (args) => {  
   const { option } = args
@@ -15,7 +16,7 @@ socket.on("set-stats", (args) => {
 
   myChart.setOption({
     title: {
-      text: 'ECharts Getting Started Example'
+      text: 'Stats Polling Console'
     },
     tooltip: {},
     xAxis: {
@@ -24,9 +25,9 @@ socket.on("set-stats", (args) => {
     yAxis: {},
     series: [
       {
-        name: 'sales',
+        name: 'Total',
         type: 'bar',
-        data: newData.map(item => item.value)
+        data: newData.map((item, key) => ({value: item.value, itemStyle: { color: bgBarColor[key] } }))
       }
     ]
   });
@@ -35,7 +36,7 @@ socket.on("set-stats", (args) => {
 
 myChart.setOption({
   title: {
-    text: 'ECharts Getting Started Example'
+    text: 'Stats Polling Console'
   },
   tooltip: {},
   xAxis: {
@@ -44,9 +45,9 @@ myChart.setOption({
   yAxis: {},
   series: [
     {
-      name: 'sales',
+      name: 'Total',
       type: 'bar',
-      data: data.map(item => item.value)
+      data: data.map((item, key) => ({value: item.value, itemStyle: { color: bgBarColor[key] } }))
     }
   ]
 });
